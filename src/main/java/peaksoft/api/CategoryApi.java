@@ -22,7 +22,7 @@ public class CategoryApi {
     public List<CategoryResponse> getAllCategories() {
         return categoryService.getAllCategory();
     }
-
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping
     public SimpleResponse saveCategory(@RequestBody CategoryRequest categoryRequest) {
         return categoryService.saveCategory(categoryRequest);
